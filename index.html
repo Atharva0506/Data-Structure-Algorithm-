@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --percent: 10%;
+        }
+        #range{
+            width: 400px;
+
+        }
+        .round{
+            height: 200px;
+            width: 200px;
+           
+            background-image: conic-gradient( blue var(--percent), red 0);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <input type="range" name="range" value="10" id="input"> 
+    <div class="round">
+
+    </div>
+    <script>
+        const pieChart = document.querySelector(".round")
+
+        document.querySelector("#input").addEventListener("input", (e)=>{
+            console.log("value " + e.target.value)
+             pieChart.style = `--percent:${e.target.value}%`
+        })
+    </script>
+</body>
+</html>
